@@ -1,0 +1,128 @@
+body {
+    background-color: #F8F5F0;
+    color: #1A1A1A;
+    overflow-x: hidden;
+    overflow-y: hidden; /* Dikelola oleh script.js */
+}
+
+/* Hero Overlay Gradient */
+.hero-overlay {
+    background: linear-gradient(to bottom, rgba(248,245,240,0.3) 0%, rgba(248,245,240,0.8) 70%, rgba(248,245,240,1) 100%);
+}
+
+/* Form Inputs Custom Style */
+.custom-input {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #1A1A1A;
+    border-radius: 0;
+    padding: 0.5rem 0;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+    outline: none;
+    border-bottom: 2px solid #1A1A1A;
+}
+
+/* Button Custom Style */
+.btn-outline {
+    display: inline-block;
+    border: 1px solid #1A1A1A;
+    padding: 0.75rem 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: #1A1A1A;
+    cursor: pointer;
+}
+
+.btn-outline:hover {
+    background: #1A1A1A;
+    color: #F8F5F0;
+}
+
+/* Scroll Animation Classes (for script.js) */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom Scrollbar for wishes */
+.wishes-container::-webkit-scrollbar {
+    width: 4px;
+}
+.wishes-container::-webkit-scrollbar-track {
+    background: rgba(26, 26, 26, 0.05); 
+}
+.wishes-container::-webkit-scrollbar-thumb {
+    background: rgba(26, 26, 26, 0.2); 
+    border-radius: 10px;
+}
+
+/* Cover Animations (for script.js) */
+#opening-layer {
+    transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s ease;
+}
+
+#opening-layer.closed {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Animasi kustom untuk tombol Open Invitation */
+@keyframes gentle-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+.animate-gentle-bounce {
+    animation: gentle-bounce 2s infinite ease-in-out;
+}
+
+/* CD Icon Spin Animation for Playing Music */
+#music-control.playing #music-icon {
+    animation: spin 3s linear infinite;
+}
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* Dynamic Wishes Card Styles for script.js */
+.wish-card {
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+.wish-card:last-child {
+    border-bottom: 0;
+}
+.wish-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+.wish-time {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+.wish-message {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.875rem;
+    color: #374151;
+    line-height: 1.625;
+}
