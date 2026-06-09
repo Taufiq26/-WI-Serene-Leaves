@@ -1,13 +1,13 @@
-# Blue Blossom & Serenity - Wedding Invitation
+# Serene Leaves - Wedding Invitation
 
-Website undangan pernikahan digital yang elegan, interaktif, dan sangat ringan. Didesain dengan nuansa biru (Blue Blossom) yang memberikan kesan tenang (Serenity) dan premium.
+Website undangan pernikahan digital yang elegan, interaktif, dan sangat ringan. Didesain dengan tema "Serene Leaves" yang mengombinasikan nuansa *dark* dan *ivory* untuk memberikan kesan elegan, minimalis, dan premium.
 
 ## ✨ Fitur Unggulan
 
-- **Cover Interaktif**: Pembuka halaman yang elegan dengan animasi kelopak bunga jatuh.
+- **Cover Interaktif**: Pembuka halaman yang elegan dengan *layout* terpusat dan background *Serene Leaves*.
 - **Auto-Personalized**: Nama tamu otomatis berubah sesuai parameter URL (`?to=NamaTamu`).
 - **Smart Countdown & Anniversary**: Penghitung mundur otomatis menuju hari bahagia yang akan berubah menjadi penghitung "Usia Pernikahan" (count-up) setelah acara dimulai.
-- **Smart RSVP**: Konfirmasi kehadiran yang langsung tersimpan ke Google Sheets.
+- **Smart RSVP & Glassmorphism UI**: Konfirmasi kehadiran yang langsung tersimpan ke Google Sheets dengan balutan desain transparan elegan (*glassmorphism*).
 - **Live Wishes**: Kirim ucapan dan doa yang akan langsung muncul di halaman website secara real-time.
 - **Save the Date**: Tombol integrasi langsung ke Google Calendar lengkap dengan jam dan lokasi.
 - **Background Music**: Musik latar romantis yang bisa dikontrol (Play/Pause) oleh tamu.
