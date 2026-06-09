@@ -14,7 +14,7 @@ function getGuestName() {
 // Call on page load
 getGuestName();
 
-// 1. OPENING ANIMATION & LOGIC
+// OPENING ANIMATION & LOGIC
 function openInvitation() {
   const cover = document.getElementById('opening-layer');
   const mainContent = document.getElementById('main-content');
@@ -66,49 +66,7 @@ function toggleMusic(event) {
   }
 }
 
-// 2. UNLOCK & SMOOTH SCROLL (Click on "Continue" button)
-function continueToSite() {
-  // 1. Add class to stop floating
-  const btn = document.querySelector('.btn-continue');
-  if (btn) btn.classList.add('is-clicked');
-
-  // 1. Unlock scroll
-  document.body.style.overflowY = 'auto';
-
-  // 2. Custom Slow Smooth Scroll (2000ms = 2 seconds)
-  smoothScrollTo('main-header', 1500);
-}
-
-// CUSTOM SMOOTH SCROLL FUNCTION
-function smoothScrollTo(targetId, duration) {
-  const target = document.getElementById(targetId);
-  if (!target) return;
-
-  const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
-  const startPosition = window.pageYOffset;
-  const distance = targetPosition - startPosition;
-  let startTime = null;
-
-  function animation(currentTime) {
-    if (startTime === null) startTime = currentTime;
-    const timeElapsed = currentTime - startTime;
-    const run = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-    window.scrollTo(0, run);
-    if (timeElapsed < duration) requestAnimationFrame(animation);
-  }
-
-  // Easing function for smooth acceleration/deceleration
-  function easeInOutQuad(t, b, c, d) {
-    t /= d / 2;
-    if (t < 1) return c / 2 * t * t + b;
-    t--;
-    return -c / 2 * (t * (t - 2) - 1) + b;
-  }
-
-  requestAnimationFrame(animation);
-}
-
-// 3. COUNTDOWN TIMER
+// COUNTDOWN TIMER
 function startCountdown() {
   // Jan 31, 2026, 08:00 WIB
   const targetDate = new Date('2026-12-31T08:00:00+07:00');
@@ -204,35 +162,8 @@ function startCountdown() {
 // Start countdown immediately
 startCountdown();
 
-// 2. FALLING PETALS EFFECT (Vanilla JS)
-function createPetals() {
-  const layer = document.getElementById('opening-layer');
-  const petalCount = 15; // Number of petals
-
-  for (let i = 0; i < petalCount; i++) {
-    let petal = document.createElement('div');
-    petal.classList.add('petal');
-
-    // Randomize size, position, and animation duration
-    let size = Math.random() * 10 + 10; // 10px to 20px
-    let left = Math.random() * 100; // 0% to 100%
-    let duration = Math.random() * 5 + 5; // 5s to 10s
-    let delay = Math.random() * 5;
-
-    petal.style.width = size + 'px';
-    petal.style.height = size + 'px';
-    petal.style.left = left + '%';
-    petal.style.animationDuration = duration + 's';
-    petal.style.animationDelay = delay + 's';
-
-    layer.appendChild(petal);
-  }
-}
-
-// 3. SCROLL REVEAL ANIMATION (Intersection Observer)
+// SCROLL REVEAL ANIMATION (Intersection Observer)
 document.addEventListener('DOMContentLoaded', () => {
-  createPetals();
-
   const observerOptions = {
     threshold: 0.15 // Trigger when 15% of element is visible
   };
@@ -252,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
   checkRSVPVisibility();
 });
 
-// 4. RSVP LOGIC
+// RSVP LOGIC
 // CONFIGURATION: Replace this URL with your Google Apps Script Web App URL
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxWmOgAd7NmblO28vksx5EGVcG9lPGFILIZAolj8Yuyi8ckPuO_Y8sK4ZSW-Noip1Jy3w/exec';
 
@@ -335,7 +266,7 @@ function completeRSVP(guestName) {
   confirmedMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
-// 5. WISHES LOGIC
+// WISHES LOGIC
 function submitWish() {
   const nameInput = document.getElementById('wish-name');
   const messageInput = document.getElementById('wish-message');

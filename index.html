@@ -28,14 +28,14 @@
 
     <!-- Welcome Cover Section -->
     <div id="opening-layer"
-        class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-ivory transition-all duration-[1200ms] ease-in-out">
+        class="fixed inset-0 z-[9999] flex flex-col bg-ivory transition-all duration-[1200ms] ease-in-out">
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=2070&auto=format&fit=crop"
                 alt="Cover Background" class="w-full h-full object-cover opacity-20">
             <div class="absolute inset-0 bg-gradient-to-t from-ivory via-ivory/80 to-ivory/30"></div>
         </div>
 
-        <div class="relative z-10 text-center px-6 w-full max-w-lg mx-auto flex flex-col items-center">
+        <div class="relative z-10 text-center px-6 py-8 w-full max-w-lg mx-auto my-auto flex flex-col items-center">
             <p class="font-sans text-xs tracking-[0.3em] uppercase mb-6 text-gray-600">The Wedding Of</p>
 
             <h1 class="font-serif text-4xl sm:text-5xl tracking-[0.1em] mb-1">TAUFIQ</h1>
@@ -342,12 +342,12 @@
     <!-- Anti-Inspect Protection -->
     <script>
         document.addEventListener('contextmenu', event => event.preventDefault());
-        document.addEventListener('keydown', function(e) {
-            if(e.key === 'F12' || e.keyCode === 123) e.preventDefault(); // F12
-            if((e.ctrlKey && e.shiftKey && e.key === 'I') || (e.metaKey && e.altKey && e.key === 'i')) e.preventDefault(); // Ctrl+Shift+I
-            if((e.ctrlKey && e.shiftKey && e.key === 'J') || (e.metaKey && e.altKey && e.key === 'j')) e.preventDefault(); // Ctrl+Shift+J
-            if((e.ctrlKey && e.key === 'u') || (e.metaKey && e.key === 'u')) e.preventDefault(); // Ctrl+U
-            if((e.ctrlKey && e.shiftKey && e.key === 'C') || (e.metaKey && e.altKey && e.key === 'c')) e.preventDefault(); // Ctrl+Shift+C
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'F12' || e.keyCode === 123) e.preventDefault(); // F12
+            if ((e.ctrlKey && e.shiftKey && e.key === 'I') || (e.metaKey && e.altKey && e.key === 'i')) e.preventDefault(); // Ctrl+Shift+I
+            if ((e.ctrlKey && e.shiftKey && e.key === 'J') || (e.metaKey && e.altKey && e.key === 'j')) e.preventDefault(); // Ctrl+Shift+J
+            if ((e.ctrlKey && e.key === 'u') || (e.metaKey && e.key === 'u')) e.preventDefault(); // Ctrl+U
+            if ((e.ctrlKey && e.shiftKey && e.key === 'C') || (e.metaKey && e.altKey && e.key === 'c')) e.preventDefault(); // Ctrl+Shift+C
         });
     </script>
 
