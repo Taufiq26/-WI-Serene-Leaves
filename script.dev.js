@@ -7,7 +7,7 @@ function getGuestName() {
   if (guestName) {
     guestNameElement.textContent = decodeURIComponent(guestName);
   } else {
-    guestNameElement.textContent = 'Tamu Undangan';
+    guestNameElement.textContent = 'Guest';
   }
 }
 
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // RSVP LOGIC
 // CONFIGURATION: Replace this URL with your Google Apps Script Web App URL
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxWmOgAd7NmblO28vksx5EGVcG9lPGFILIZAolj8Yuyi8ckPuO_Y8sK4ZSW-Noip1Jy3w/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbygjDm05fpVONsnOO8doQDCFU9z62-fNTrMtMlShrg6XyZMpZSKecoGcsI6FfgzHjH_Cw/exec';
 
 function checkRSVPVisibility() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -130,7 +130,7 @@ function submitRSVP(status) {
   const originalText = btn.innerHTML;
 
   // Show loading state
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Menyimpan...';
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
   btn.disabled = true;
   otherBtn.disabled = true;
 
@@ -148,7 +148,7 @@ function submitRSVP(status) {
     })
     .catch(error => {
       console.error('Error!', error.message);
-      alert('Maaf, terjadi kesalahan. Silakan coba lagi.');
+      alert('Sorry, an error occurred. Please try again.');
       btn.innerHTML = originalText;
       btn.disabled = false;
       otherBtn.disabled = false;
@@ -179,12 +179,12 @@ function submitWish() {
   const originalText = btn.innerHTML;
 
   if (!nameInput.value || !messageInput.value) {
-    alert('Mohon isi nama dan ucapan Anda.');
+    alert('Please fill in your name and wish.');
     return;
   }
 
   // Show loading
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
   btn.disabled = true;
 
   const data = new FormData();
@@ -195,7 +195,7 @@ function submitWish() {
 
   fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: data })
     .then(response => {
-      alert('Terima kasih atas ucapan dan doa Anda!');
+      alert('Thank you for your wishes and prayers!');
       btn.innerHTML = originalText;
       btn.disabled = false;
 
@@ -208,7 +208,7 @@ function submitWish() {
     })
     .catch(error => {
       console.error('Error!', error.message);
-      alert('Maaf, terjadi kesalahan saat mengirim ucapan.');
+      alert('Sorry, an error occurred while sending your wish.');
       btn.innerHTML = originalText;
       btn.disabled = false;
     });
@@ -223,7 +223,7 @@ function loadWishes() {
     .then(response => response.json())
     .then(data => {
       if (data.length === 0) {
-        displayContainer.innerHTML = '<div style="text-align:center; padding:20px; color:#999;">Belum ada ucapan. Jadilah yang pertama!</div>';
+        displayContainer.innerHTML = '<div style="text-align:center; padding:20px; color:#999;">No wishes yet. Be the first to leave one!</div>';
         return;
       }
 
@@ -244,7 +244,7 @@ function loadWishes() {
     })
     .catch(error => {
       console.error('Error loading wishes:', error);
-      displayContainer.innerHTML = '<div style="text-align:center; padding:20px; color:red;">Gagal memuat ucapan. Silakan segarkan halaman.</div>';
+      displayContainer.innerHTML = '<div style="text-align:center; padding:20px; color:red;">Failed to load wishes. Please refresh the page.</div>';
     });
 }
 
